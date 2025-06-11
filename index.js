@@ -3,13 +3,11 @@ let ACSpeed = 0;
 let ACtemp = 18;
 function openAC() {
   ACStatus = true;
-  ACSpeed = 1;
-  console.log(`AC is opened and AC speed : 1`);
+  console.log(`AC is opened`);
 }
 function closeAC() {
   ACStatus = false;
-  ACSpeed = 0;
-  console.log(`AC is closed and AC speed : 0`);
+  console.log(`AC is closed `);
 }
 function toggleAC() {
   if (ACStatus) {
@@ -30,9 +28,9 @@ function decreasetemp() {
     console.log(`AC temp : ${ACtemp}`);
   }
 }
-function speed() {
-  if (ACStatus && ACSpeed < 3) {
-    ACSpeed += 1;
-    console.log(`AC speed : ${ACSpeed}`);
+function Speed() {
+  if (ACStatus) {
+    ACSpeed = (ACSpeed % 3) + 1;
+    console.log(`AC Speed is: ${ACSpeed}`);
   }
 }
